@@ -158,7 +158,7 @@ class _MyFormPageState extends State<MyFormPage> {
                   trailing: DropdownButton(
                     value: listJenis.first,
                     icon: const Icon(Icons.keyboard_arrow_down),
-                    hint: Text(
+                    hint: const Text(
                       "Pilih Jenis",
                     ),
                     items: listJenis.map((String items) {
@@ -256,7 +256,10 @@ class MyDataPage extends StatelessWidget {
                   // Route menu ke halaman form
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => MyDataPage()),
+                    MaterialPageRoute(
+                        builder: (context) => MyDataPage(
+                              list: MyFormPage.listDataBudget,
+                            )),
                   );
                 },
               ),
@@ -267,9 +270,7 @@ class MyDataPage extends StatelessWidget {
           child: ListView.builder(
               itemCount: list.length,
               itemBuilder: (context, index) => Card(
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Color.fromARGB(255, 187, 152, 237))),
+                    shadowColor: Color.fromARGB(255, 88, 52, 127),
                     elevation: 6,
                     margin: const EdgeInsets.all(10),
                     child: ListTile(
