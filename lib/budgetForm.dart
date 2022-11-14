@@ -154,8 +154,10 @@ class _MyFormPageState extends State<MyFormPage> {
                     },
                   ),
                 ),
-                ListTile(
-                  trailing: DropdownButton(
+                Padding(
+                  // Menggunakan padding sebesar 8 pixels
+                  padding: const EdgeInsets.all(8.0),
+                  child: DropdownButton(
                     value: listJenis.first,
                     icon: const Icon(Icons.keyboard_arrow_down),
                     hint: const Text(
@@ -180,7 +182,8 @@ class _MyFormPageState extends State<MyFormPage> {
                     style: TextStyle(color: Colors.white),
                   ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    backgroundColor: MaterialStateProperty.all(
+                        Color.fromARGB(255, 93, 24, 212)),
                   ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
