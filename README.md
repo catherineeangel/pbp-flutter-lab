@@ -36,7 +36,11 @@ Navigator.push menambahkan route ke stack yang berisi route-route aplikasi sedan
 
 ## jenis-jenis event yang ada pada Flutter (contoh: onPressed)
 
+onPressed, onChanged, AnimationEvent, ClipboardEvent, ErrorEvent , dll
+
 ## cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+
+Navigator pada Flutter diimplementasikan dengan menggunakan stack. Navigator pada flutter juga menerapkan method-method pada stack seperti push dan pop. Navigator menyediakan metode untuk mengubah tumpukan dengan push to stack atau dengan keluar dari tumpukan. Metode Navigator.push adalah untuk menavigasi ke halaman yang lebih baru dan Navigator.pop untuk kembali dari halaman saat ini.
 
 ## Implementasi
 
