@@ -19,7 +19,7 @@ class _MyFormPageState extends State<MyFormPage> {
 
   int nominal = 0;
 
-  String jenisBudget = "Pemasukan";
+  String? jenisBudget = null;
   List<String> listJenis = ["Pemasukan", "Pengeluaran"];
   List<Object> dataBudget = [];
 
@@ -158,7 +158,7 @@ class _MyFormPageState extends State<MyFormPage> {
                   // Menggunakan padding sebesar 8 pixels
                   padding: const EdgeInsets.all(8.0),
                   child: DropdownButton(
-                    value: listJenis.first,
+                    value: jenisBudget,
                     icon: const Icon(Icons.keyboard_arrow_down),
                     hint: const Text(
                       "Pilih Jenis",
@@ -189,7 +189,7 @@ class _MyFormPageState extends State<MyFormPage> {
                     if (_formKey.currentState!.validate()) {
                       dataBudget.add(_judul);
                       dataBudget.add(nominal);
-                      dataBudget.add(jenisBudget);
+                      dataBudget.add(jenisBudget!);
                       data.add(dataBudget);
                       //reset
                       dataBudget = [];
