@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/main.dart';
+import 'package:counter_7/widget/drawer.dart';
 import 'package:flutter/services.dart';
 
 class MyFormPage extends StatefulWidget {
@@ -31,46 +31,18 @@ class _MyFormPageState extends State<MyFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Budget Form'),
-      ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Route menu ke halaman utama
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Tambah Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pop(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Data Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => MyDataPage(list: data)),
-                );
-              },
-            ),
-          ],
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Color.fromARGB(255, 212, 155, 255),
+        title: const Text(
+          'Budget Form',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+            color: Colors.black54,
+          ),
         ),
       ),
+      drawer: DrawerClass('Budget Form'),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
@@ -227,48 +199,18 @@ class MyDataPage extends StatelessWidget {
     // Use the Todo to create the UI.
     return Scaffold(
         appBar: AppBar(
-          title: Text("Data Budget"),
-        ),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              // Menambahkan clickable menu
-              ListTile(
-                title: const Text('Counter'),
-                onTap: () {
-                  // Route menu ke halaman utama
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyHomePage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Tambah Budget'),
-                onTap: () {
-                  // Route menu ke halaman form
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyFormPage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Data Budget'),
-                onTap: () {
-                  // Route menu ke halaman form
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MyDataPage(
-                              list: MyFormPage.listDataBudget,
-                            )),
-                  );
-                },
-              ),
-            ],
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Color.fromARGB(255, 212, 155, 255),
+          title: const Text(
+            'Data Budget',
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 20,
+              color: Colors.black54,
+            ),
           ),
         ),
+        drawer: DrawerClass('Data Budget'),
         body: SafeArea(
           child: ListView.builder(
               itemCount: list.length,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/budgetForm.dart';
+import 'package:counter_7/pages/budgetForm.dart';
+import 'package:counter_7/widget/drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -84,48 +85,19 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      // Menambahkan drawer menu
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Route menu ke halaman utama
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Tambah Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Data Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          MyDataPage(list: MyFormPage.listDataBudget)),
-                );
-              },
-            ),
-          ],
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Color.fromARGB(255, 212, 155, 255),
+        title: const Text(
+          'Counter 7',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+            color: Colors.black54,
+          ),
         ),
       ),
+      // Menambahkan drawer menu
+      drawer: DrawerClass('counter_7'),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

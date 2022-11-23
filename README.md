@@ -3,15 +3,37 @@
 Catherine Angel Robin
 2106705392/D
 
+## **TUGAS 9**
+
+## Can we fetch a JSON data without making a model first? If yes, is it better than making a model first?
+
+Yes, it is possible to fetch a JSON data without making a model at first. We can make a dynamic map from the JSON and access the value like a dictionary in python (`data[key]`). But it is not a good practice as we wouldn't know if there is a missing field or the fields is not what we expect, so I'll be hard to manage and error-prone. That being said, it is obvious that it's not better than making a model first.
+
+## Widgets used in this assignment
+
+- `ListTile`: Used to populate a ListView in _Flutter_. It contains title as well as leading or trailing icons.
+- `Checkbox`: Used to make a clickable checkbox.
+- `Row`: Display widgets in a Row.
+- `TextButton`: It is a simple Button without any border that listens for _onPressed_ and _onLongPress_ gestures.
+- `FutureBuilder`: Widget that builds itself based on the latest snapshot of interaction with a Future.
+
+## How fetching data from json in flutter works
+
+Data is fetched using HTTP in `fetchWatchlist` function that call the get function by HTTP instances. The function returns the list of `MyWatchlist` object. `FutureBuilder` will call the function and wait for its response. When the data is fetched, `FutureBuilder` returns `ListView.builder` that builds `ListTiles` containing the mapped data that we get from `fetchWatchlist` function.
+
+## Implementation
+
+1. Create `watchlist.dart` with Watchlist class in model directory.
+2. Create `fetch_watchlist.dart` and make a function like this to fetch data from the API.
+3. Create `watchlist.dart` in pages directory and make a `WatchlistPage StatefulWidget` that contains `FutureBuilder` that fetch data using `fetchWatchlist` function.
+4. Create `watchlistDetail.dart` in pages directory and make a `MyWatchlistDetailPage StatelessWidget` that displays the data that passed on from `MyWatchlistPage`.
+5. Pass data from `MyWatchlistPage` to `MyWatchlistDetailPage` using `Navigator.push`.
+
+6. Create `CheckBox` widget and its `onChanged` function for Bonus.
+
 ## **TUGAS 8**
 
 <hr />
-
-<!--  Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
- Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
- Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed).
- Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
- Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas. -->
 
 ## perbedaan Navigator.push dan Navigator.pushReplacement.
 
